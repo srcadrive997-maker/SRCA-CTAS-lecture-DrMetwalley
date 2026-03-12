@@ -908,6 +908,7 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
     <a class="nav-tab" href="#pitfalls" onclick="document.getElementById('navDrawer').classList.remove('open')">&#128270; Pitfalls</a>
     <a class="nav-tab" href="#modifiers-detail" onclick="document.getElementById('navDrawer').classList.remove('open')">&#128295; Modifiers Detail</a>
     <a class="nav-tab" href="#full-algorithm" onclick="document.getElementById('navDrawer').classList.remove('open')">&#127968; Algorithm</a>
+    <a class="nav-tab" href="#pearls" onclick="document.getElementById('navDrawer').classList.remove('open')">&#128142; Pearls of Wisdom</a>
   </div>
 </div>
 
@@ -932,6 +933,7 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
     <a class="nav-tab" href="#pitfalls">&#128270; Pitfalls</a>
     <a class="nav-tab" href="#modifiers-detail">&#128295; Modifiers Detail</a>
     <a class="nav-tab" href="#full-algorithm">&#127968; Algorithm</a>
+    <a class="nav-tab" href="#pearls">&#128142; Pearls of Wisdom</a>
 </nav>
 
 <!-- ===== OVERVIEW ===== -->
@@ -1800,7 +1802,7 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
     <div class="step-num-badge">1</div>
     <div>
       <div class="step-title">Patient Registration</div>
-      <div class="step-desc">Enter patient and triage nurse details</div>
+      <div class="step-desc">Enter patient and paramedic / EMT details</div>
     </div>
   </div>
   <div class="info-box">
@@ -1809,7 +1811,7 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
   </div>
   <div class="form-row">
     <div class="form-group">
-      <label class="form-label">Triage Nurse <span class="req">*</span></label>
+      <label class="form-label">Paramedic / EMT <span class="req">*</span></label>
       <input type="text" class="form-input" id="nurseName" placeholder="Full name" oninput="updateState()"/>
     </div>
     <div class="form-group">
@@ -2136,7 +2138,7 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
     <div class="report-card">
       <div class="report-title">&#128203; CTAS Triage Report &mdash; <span id="rpt-ts"></span></div>
       <table class="report-table">
-        <tr><td>Triage Nurse</td><td id="rpt-nurse">&#8212;</td></tr>
+        <tr><td>Paramedic / EMT</td><td id="rpt-nurse">&#8212;</td></tr>
         <tr><td>Location</td><td id="rpt-loc">&#8212;</td></tr>
         <tr><td>Patient Age</td><td id="rpt-age">&#8212;</td></tr>
         <tr><td>Patient Sex</td><td id="rpt-sex">&#8212;</td></tr>
@@ -2535,7 +2537,7 @@ function shareWhatsApp(){
   var txt='CTAS TRIAGE REPORT\n===================\n';
   txt+='Date: '+document.getElementById('triageDate').value+'\n';
   txt+='Time: '+document.getElementById('triageTime').value+'\n';
-  txt+='Nurse: '+(S.nurse||'N/A')+'\n';
+  txt+='Paramedic/EMT: '+(S.nurse||'N/A')+'\n';
   txt+='Age: '+(S.age||'N/A')+' | Sex: '+(S.sex||'N/A')+'\n';
   txt+='Complaint: '+(S.complaint||'N/A')+'\n---\n';
   txt+='CTAS LEVEL: '+S.ctasLevel+' — '+NAMES[S.ctasLevel]+'\n';
@@ -5296,6 +5298,105 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--ink);m
 </section>
 </div>
 
+<div class="glow-divider"></div>
+
+<!-- ===== SECTION: PEARLS OF WISDOM ===== -->
+<div id="pearls" style="background:linear-gradient(135deg,#f8f4ff 0%,#fff8f0 50%,#f0f8ff 100%);position:relative;overflow:hidden;">
+<div class="srca-wm" style="top:60px;right:30px;" aria-hidden="true"></div>
+<section class="section reveal" style="max-width:1300px;margin:0 auto;padding:60px 20px;">
+
+  <h2 class="section-title" style="font-family:'Montserrat',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;text-align:center;margin-bottom:10px;color:#1a1a2e;">
+    &#128142; Pearls of Wisdom — Prehospital CTAS
+  </h2>
+  <p style="text-align:center;color:#4a4a6a;font-size:1rem;margin-bottom:8px;">Distilled clinical wisdom for the EMS professional in the field</p>
+  <div style="width:70px;height:4px;background:linear-gradient(90deg,#8e44ad,#2980b9);margin:0 auto 48px;border-radius:2px;"></div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #8e44ad;box-shadow:0 4px 20px rgba(142,68,173,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128142;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#6c3483;margin-bottom:10px;">The Highest Level Always Governs</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">In CTAS, you never average. You never compromise. The single most critical finding — whether from the chief complaint, a first order modifier, or a second order modifier — determines the final level. One abnormal finding can elevate everything. <strong>When in doubt, go higher.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #e74c3c;box-shadow:0 4px 20px rgba(231,76,60,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#9889;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#c0392b;margin-bottom:10px;">The First CTAS Is Sacred</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">The first CTAS score — recorded on arrival, before any intervention — is a permanent, unalterable record of initial severity. Even if the patient walks out of the ambulance smiling after your treatment, CTAS #1 stays. <strong>It is the truth of the moment you arrived.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #e67e22;box-shadow:0 4px 20px rgba(230,126,34,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128064;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#d35400;margin-bottom:10px;">Look Beyond What You See</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">A calm patient in clean clothes can be in early septic shock. A quiet child may be decompensating. Normal vital signs do not mean a normal patient. <strong>CTAS was designed precisely for the cases that fool the eye.</strong> Trust the modifiers, not the appearance.</p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #27ae60;box-shadow:0 4px 20px rgba(39,174,96,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128260;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#1e8449;margin-bottom:10px;">CTAS Is Dynamic, Not Static</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">A patient is not a fixed category — they are a moving target. Reassess every 15 minutes. A CTAS 3 can become a CTAS 1 in minutes. <strong>The paramedic who reassesses is the paramedic who saves lives.</strong> Never assume the first assessment is the last truth.</p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #2980b9;box-shadow:0 4px 20px rgba(41,128,185,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#9878;&#65039;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#1a5276;margin-bottom:10px;">Empathy Is a Clinical Tool</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">The CTAS framework explicitly states that attitude and empathy are critical to accurate triage. A paramedic who is non-judgmental, culturally sensitive, and emotionally present will elicit better history, detect subtle signs, and assign more accurate CTAS levels. <strong>Compassion improves clinical accuracy.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #f1c40f;box-shadow:0 4px 20px rgba(241,196,15,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128222;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#b7950b;margin-bottom:10px;">When in Doubt — Call Medical Control</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">No paramedic is an island. The medical director exists to support your clinical decisions, not to judge them. Calling for guidance is not weakness — it is professional excellence. <strong>A single phone call can be the difference between a correct and a catastrophic decision.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #16a085;box-shadow:0 4px 20px rgba(22,160,133,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128100;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#0e6655;margin-bottom:10px;">Every Patient Is a New Story</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">Familiarity is the enemy of accuracy. The patient you have seen 10 times before can present their 11th call as a CTAS 1. <strong>Anchor bias kills.</strong> Begin every assessment with fresh eyes, an open mind, and the full CTAS process — regardless of history.</p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #c0392b;box-shadow:0 4px 20px rgba(192,57,43,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128218;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#922b21;margin-bottom:10px;">Document Everything — Always</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">The e-PCR is not bureaucracy — it is your clinical record, your legal protection, and the hospital's first window into your patient. Both CTAS scores are mandatory. Every modifier applied must be documented. <strong>If it isn't written, it didn't happen.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #2c3e50;box-shadow:0 4px 20px rgba(44,62,80,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#127775;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#2c3e50;margin-bottom:10px;">CTAS Is a Language — Speak It Fluently</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">When you say "CTAS 2" to the receiving ED, you are communicating an entire clinical picture — urgency, physiology, expected deterioration risk, and resource need — in a single number. <strong>Master CTAS and you master the language of prehospital urgency.</strong> Speak it with precision.</p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #8e44ad;box-shadow:0 4px 20px rgba(142,68,173,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#128149;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#6c3483;margin-bottom:10px;">Children Are Not Small Adults</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">Pediatric CTAS requires age-specific vital sign norms, the Pediatric Assessment Triangle, and age-appropriate pain scales. A heart rate of 130 is normal in an infant but alarming in an adult. <strong>Apply pediatric thresholds — never adult norms — to children under 14.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #e67e22;box-shadow:0 4px 20px rgba(230,126,34,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#127919;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#d35400;margin-bottom:10px;">MOI Is a Modifier — Not a Diagnosis</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">A high-energy mechanism of injury mandates a minimum CTAS 2 — even if the patient is walking and talking. The body compensates. Internal injuries are invisible. <strong>"Until proven otherwise" is the rule — high-energy MOI equals high acuity until the hospital proves otherwise.</strong></p>
+    </div>
+
+    <div style="background:white;border-radius:16px;padding:26px;border-top:5px solid #27ae60;box-shadow:0 4px 20px rgba(39,174,96,0.12);">
+      <div style="font-size:2.2rem;margin-bottom:12px;">&#9889;</div>
+      <h4 style="font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:#1e8449;margin-bottom:10px;">Speed and Accuracy Are Not Opposites</h4>
+      <p style="font-size:0.92rem;color:#4a4a6a;line-height:1.75;">The 4-step CTAS process — Quick Look, Presenting Complaint, First Order Modifiers, Second Order Modifiers — is designed to be rapid and systematic simultaneously. With practice, it becomes second nature. <strong>A well-trained paramedic assigns CTAS accurately in under 60 seconds.</strong></p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:50px;background:linear-gradient(135deg,#1a1a2e,#0f3460);border-radius:16px;padding:36px;text-align:center;">
+    <p style="font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:700;color:#ffffff;line-height:1.8;margin-bottom:16px;">
+      &#8220;In prehospital medicine, the paramedic who masters CTAS does not merely classify patients — they protect them. Every correct CTAS level is an act of advocacy for the patient who cannot yet speak for themselves in the emergency department.&#8221;
+    </p>
+    <p style="font-family:'Montserrat',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;">— Prehospital CTAS &nbsp;|&nbsp; Pearls of Wisdom &nbsp;|&nbsp; Dr. Metwalley Amin Helwa</p>
+  </div>
+
+</section>
+</div>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
 <div style="background:#1a1a2e;padding:28px 20px;text-align:center;border-top:3px solid #e74c3c;">
@@ -5796,7 +5897,7 @@ function shareWhatsApp(){
   var txt='CTAS TRIAGE REPORT\n===================\n';
   txt+='Date: '+document.getElementById('triageDate').value+'\n';
   txt+='Time: '+document.getElementById('triageTime').value+'\n';
-  txt+='Nurse: '+(S.nurse||'N/A')+'\n';
+  txt+='Paramedic/EMT: '+(S.nurse||'N/A')+'\n';
   txt+='Age: '+(S.age||'N/A')+' | Sex: '+(S.sex||'N/A')+'\n';
   txt+='Complaint: '+(S.complaint||'N/A')+'\n---\n';
   txt+='CTAS LEVEL: '+S.ctasLevel+' — '+NAMES[S.ctasLevel]+'\n';
