@@ -914,148 +914,25 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
 }
 
 
-/* ===== CTAS SEVERITY ARROW ===== */
-.ctas-severity-arrow-wrap {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 18px;
-  position: relative;
-}
-.ctas-severity-arrow-outer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 54px;
-  height: 250px;
-  flex-shrink: 0;
-  position: relative;
-  animation: ctas-arrow-float 3s ease-in-out infinite, ctas-arrow-shake 0.18s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 14px rgba(231,76,60,0.7)) drop-shadow(0 0 28px rgba(41,128,185,0.5));
-}
-@keyframes ctas-arrow-float {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
-}
-@keyframes ctas-arrow-shake {
-  0%   { transform: translateY(var(--float-y, 0)) rotate(-1.5deg); }
-  100% { transform: translateY(var(--float-y, 0)) rotate(1.5deg); }
-}
-.ctas-arrow-svg {
-  width: 54px;
-  height: 100%;
-  flex: 1;
-  display: block;
-  overflow: visible;
-}
-.ctas-arrow-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  padding: 6px 0;
-}
-.ctas-arrow-label.top-label {
-  color: #e74c3c;
-  text-shadow: 0 0 8px rgba(231,76,60,0.8);
-}
-.ctas-arrow-label.bot-label {
-  color: #2980b9;
-  text-shadow: 0 0 8px rgba(41,128,185,0.8);
-}
-.ctas-levels-with-arrow {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}
-.ctas-levels-stack {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.ctas-level-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  box-shadow: 0 3px 16px rgba(0,0,0,0.18);
-  transition: transform 0.2s;
-  cursor: default;
-  position: relative;
-  overflow: hidden;
-}
-.ctas-level-row:hover { transform: scale(1.02); }
-.ctas-level-row .clr-num {
-  font-size: 1.6rem;
-  font-weight: 900;
-  line-height: 1;
-  min-width: 32px;
-  text-align: center;
-}
-.ctas-level-row .clr-name { flex: 1; }
-.ctas-level-row .clr-time {
-  font-size: 0.72rem;
-  opacity: 0.85;
-  white-space: nowrap;
-}
-.clr-1 { background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%); color: #fff; box-shadow: 0 4px 18px rgba(231,76,60,0.45); }
-.clr-2 { background: linear-gradient(90deg, #e67e22 0%, #d35400 100%); color: #fff; box-shadow: 0 4px 18px rgba(230,126,34,0.45); }
-.clr-3 { background: linear-gradient(90deg, #f1c40f 0%, #e6b800 100%); color: #333; box-shadow: 0 4px 18px rgba(241,196,15,0.45); }
-.clr-4 { background: linear-gradient(90deg, #27ae60 0%, #1e8449 100%); color: #fff; box-shadow: 0 4px 18px rgba(39,174,96,0.45); }
-.clr-5 { background: linear-gradient(90deg, #2980b9 0%, #1a5276 100%); color: #fff; box-shadow: 0 4px 18px rgba(41,128,185,0.45); }
-
-@media (max-width: 600px) {
-  .ctas-severity-arrow-outer { width: 38px; height: 200px; }
-  .ctas-arrow-svg { width: 38px; }
-  .ctas-level-row { padding: 8px 12px; font-size: 0.82rem; }
-  .ctas-level-row .clr-num { font-size: 1.2rem; }
-}
-
-/* ===== DYNAMIC BUBBLE ARROW ===== */
-@keyframes arrowShake {
-  0%   { transform: rotate(0deg) translateY(0); }
-  10%  { transform: rotate(-12deg) translateY(-3px); }
-  20%  { transform: rotate(12deg) translateY(-5px); }
-  30%  { transform: rotate(-10deg) translateY(-3px); }
-  40%  { transform: rotate(10deg) translateY(-2px); }
-  50%  { transform: rotate(-6deg) translateY(-4px); }
-  60%  { transform: rotate(6deg) translateY(-2px); }
-  70%  { transform: rotate(-4deg) translateY(-1px); }
-  80%  { transform: rotate(4deg) translateY(0); }
-  90%  { transform: rotate(-2deg) translateY(0); }
-  100% { transform: rotate(0deg) translateY(0); }
-}
-@keyframes arrowFloat {
-  0%,100% { transform: translateY(0px); }
-  50%     { transform: translateY(-6px); }
-}
-#ctasArrowSvg {
-  animation: arrowFloat 2.2s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-#ctasArrowSvg.shaking {
-  animation: arrowShake 0.7s ease-in-out, arrowFloat 2.2s ease-in-out 0.7s infinite;
-}
-
 </style>
 </head>
 <body>
 
 <!-- ===== PREFACE SECTION (from PowerPoint) ===== -->
-<div id="preface" style="background:linear-gradient(160deg,#fff5f5 0%,#fff8f0 18%,#fffef0 36%,#f0fff5 54%,#f0f8ff 72%,#f5f0ff 100%);position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center;">
+<div id="preface" style="background:linear-gradient(160deg,#fff5f5 0%,#fff8f0 18%,#fffef0 36%,#f0fff5 54%,#f0f8ff 72%,#f5f0ff 100%);position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;">
+
+<!-- ===== CINEMATIC POSTER ===== -->
+<div style="width:100%;max-height:520px;overflow:hidden;position:relative;flex-shrink:0;">
+  <img src="ctas_poster.jpg" alt="CTAS Prehospital Emergency Triage — Saudi SRCA EMS" style="width:100%;max-height:520px;object-fit:cover;object-position:center 30%;display:block;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(26,26,46,0.85) 100%);"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 32px;">
+    <div style="font-family:'Montserrat',sans-serif;font-size:clamp(0.65rem,1.5vw,0.8rem);font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;">Saudi Red Crescent Authority — SRCA 997</div>
+    <div style="font-family:'Montserrat',sans-serif;font-size:clamp(1rem,3vw,1.8rem);font-weight:900;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.6);">Prehospital <span style="color:#e74c3c;">CTAS</span> — Canadian Triage &amp; Acuity Scale</div>
+  </div>
+</div>
+<!-- ===== END POSTER ===== -->
+
+<div style="position:relative;z-index:2;width:100%;flex:1;display:flex;align-items:center;justify-content:center;">
 
   <!-- Animated background grid -->
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;"></div>
@@ -1172,6 +1049,8 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
 
   </div>
 </div>
+</div>
+<!-- end preface inner wrapper -->
 
 <style>
 @keyframes pulse-dot {
@@ -1436,48 +1315,12 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
   <div class="section-float-icon"><span class="anim-bounce">&#127937;</span></div>
   <h2 class="section-title reveal">The Five CTAS Levels</h2>
   <div class="section-line reveal" style="background: linear-gradient(90deg, #e74c3c, #e67e22, #f1c40f, #27ae60, #2980b9);"></div>
-  <!-- CTAS SEVERITY ARROW + OVAL ROWS -->
-  <div class="ctas-levels-with-arrow">
-    <!-- Vertical Gradient Arrow -->
-    <div class="ctas-severity-arrow-outer" aria-hidden="true">
-      <span class="ctas-arrow-label top-label">Most Severe</span>
-      <svg class="ctas-arrow-svg" viewBox="0 0 54 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="ctasArrowGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stop-color="#e74c3c"/>
-            <stop offset="25%"  stop-color="#e67e22"/>
-            <stop offset="50%"  stop-color="#f1c40f"/>
-            <stop offset="75%"  stop-color="#27ae60"/>
-            <stop offset="100%" stop-color="#2980b9"/>
-          </linearGradient>
-          <filter id="ctasArrowGlow" x="-60%" y="-10%" width="220%" height="120%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <!-- Arrow shaft -->
-        <rect x="20" y="60" width="14" height="330" rx="7" fill="url(#ctasArrowGrad)" filter="url(#ctasArrowGlow)" opacity="0.95"/>
-        <!-- Arrow head pointing UP -->
-        <polygon points="27,4 6,68 48,68" fill="url(#ctasArrowGrad)" filter="url(#ctasArrowGlow)"/>
-        <!-- Glow halo on arrowhead -->
-        <polygon points="27,4 6,68 48,68" fill="none" stroke="#e74c3c" stroke-width="2" opacity="0.5"/>
-        <!-- Level markers on shaft -->
-        <circle cx="27" cy="90"  r="6" fill="#e74c3c" stroke="#fff" stroke-width="1.5"/>
-        <circle cx="27" cy="162" r="6" fill="#e67e22" stroke="#fff" stroke-width="1.5"/>
-        <circle cx="27" cy="234" r="6" fill="#f1c40f" stroke="#fff" stroke-width="1.5"/>
-        <circle cx="27" cy="306" r="6" fill="#27ae60" stroke="#fff" stroke-width="1.5"/>
-        <circle cx="27" cy="378" r="6" fill="#2980b9" stroke="#fff" stroke-width="1.5"/>
-      </svg>
-      <span class="ctas-arrow-label bot-label">Least Severe</span>
-    </div>
-    <!-- CTAS Level Oval Rows -->
-    <div class="ctas-levels-stack">
+  <div class="ctas-levels-stack">
       <div class="ctas-level-row clr-1"><span class="clr-num">1</span><span class="clr-name">Resuscitation</span><span class="clr-time">&#9203; Immediate — 0 min</span></div>
       <div class="ctas-level-row clr-2"><span class="clr-num">2</span><span class="clr-name">Emergent</span><span class="clr-time">&#9203; Very Urgent — 15 min</span></div>
       <div class="ctas-level-row clr-3"><span class="clr-num">3</span><span class="clr-name">Urgent</span><span class="clr-time">&#9203; Urgent — 30 min</span></div>
       <div class="ctas-level-row clr-4"><span class="clr-num">4</span><span class="clr-name">Less-Urgent</span><span class="clr-time">&#9203; Less Urgent — 60 min</span></div>
       <div class="ctas-level-row clr-5"><span class="clr-num">5</span><span class="clr-name">Non-Urgent</span><span class="clr-time">&#9203; Non-Urgent — 120 min</span></div>
-    </div>
   </div>
 
   <div style="height:30px;"></div>
@@ -1587,36 +1430,38 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
 
     <div class="rule-card r3 reveal">
       <div class="rule-num">3</div>
-      <h3 style="color:#c0392b;">&#128308; Rule #3 — VSA &amp; Resuscitation</h3>
-      <p>For a patient who is <strong>Vital Signs Absent (VSA)</strong> on arrival and who is resuscitated, the CTAS <strong>must stay as CTAS 1</strong>.</p>
-      <p style="margin-top:8px;">This rule ensures that the initial severity of the patient's condition is permanently recorded, regardless of the outcome of resuscitation efforts.</p>
+      <h3 style="color:#c0392b;">&#128308; Rule #3 — Max 2-Level Downgrade</h3>
+      <p>When taking into consideration the patient's response to treatment, subsequent CTAS levels assigned <strong>must not be any greater than two (2) levels below the Arrival CTAS</strong>.</p>
+      <ul style="margin-top:10px;">
+        <li>Example: Arrival CTAS 1 (anaphylaxis) → after epinephrine, patient improves → <strong>Departure CTAS cannot go below CTAS 3</strong></li>
+        <li>This creates a safety margin in case the patient deteriorates again during transport.</li>
+        <li>Improvements in condition must be considered <strong>dynamic</strong> — never assume full recovery in the field.</li>
+      </ul>
     </div>
 
     <div class="rule-card r4 reveal">
       <div class="rule-num">4</div>
-      <h3>&#9760; Rule #4 — Obviously Dead</h3>
-      <p>In cases where it is determined on arrival that a patient is <strong>"obviously dead"</strong>, CTAS is required to be assigned and documented as a <strong>zero (0)</strong> on the E-PCR.</p>
+      <h3 style="color:#c0392b;">&#128308; Rule #4 — VSA &amp; Resuscitation</h3>
+      <p>For a patient who is <strong>Vital Signs Absent (VSA)</strong> on arrival and who is resuscitated (ROSC), the CTAS <strong>must stay as CTAS 1</strong> throughout transport.</p>
+      <p style="margin-top:8px;">Reason: Risk of re-arrest is significant. The patient may deteriorate again at any time.</p>
     </div>
 
     <div class="rule-card r5 reveal">
       <div class="rule-num">5</div>
-      <h3>&#128336; Transport Time Considerations</h3>
+      <h3>&#9760; Rule #5 — Termination of Resuscitation (TOR)</h3>
       <ul>
-        <li><strong>Short transport (&lt;10 min):</strong> May not have opportunity to update CTAS level before arrival.</li>
-        <li><strong>Long transport (≥20 min):</strong> Greater likelihood of condition change; more time to update ED of CTAS changes.</li>
-        <li>Always notify ED of changes to allow preparation of appropriate resources.</li>
+        <li>If TOR is received <strong>before transport</strong>: document Departure CTAS as <strong>zero (0)</strong> on the E-PCR.</li>
+        <li>If TOR is received <strong>after transport has started</strong>: no additional CTAS documentation required in Remarks.</li>
+        <li>Always record the applicable <strong>TOR procedure code</strong> in the procedure section of the E-PCR.</li>
+        <li>If patient was not VSA on arrival (e.g. CTAS 2 chest pain) but arrests en route: Departure CTAS becomes <strong>CTAS 1</strong>.</li>
       </ul>
     </div>
 
     <div class="rule-card r6 reveal">
       <div class="rule-num">6</div>
-      <h3 style="color:#8e44ad;">&#9888; Hard-to-Assign Patients</h3>
-      <p>If a patient seems difficult to assign an acuity level to because they don't fit any category, paramedics must either:</p>
-      <ul>
-        <li>Discuss the case with <strong>SRCA medical control</strong>, or</li>
-        <li>Make a judgement based on their <strong>clinical experience</strong>.</li>
-      </ul>
-      <p style="margin-top:8px;">Never leave a patient unassigned — always document a CTAS level.</p>
+      <h3>&#9760; Rule #6 — Obviously Dead</h3>
+      <p>If a patient is determined on arrival to be <strong>"obviously dead"</strong> as defined by BLS PCS, CTAS is documented as <strong>zero (0)</strong> on the E-PCR — regardless of whether the patient is transported or not.</p>
+      <p style="margin-top:8px;">No Arrival or Departure CTAS score is required in these cases.</p>
     </div>
 
   </div>
@@ -1640,6 +1485,37 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
       <p><strong>Most available</strong> receiving facility. Greater flexibility in destination selection based on availability and patient preference.</p>
     </div>
   </div>
+
+  <!-- Prehospital vs ED CTAS -->
+  <h3 class="reveal sub-title" style="border-color:#8e44ad; color:#6c3483; margin: 48px 0 22px;">&#9878;&#65039; Prehospital CTAS vs. Emergency Department CTAS</h3>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:24px;">
+    <div style="background:rgba(231,76,60,0.08);border:2px solid rgba(231,76,60,0.35);border-radius:14px;padding:20px 22px;">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;color:#c0392b;margin-bottom:12px;">&#128657; Prehospital CTAS</div>
+      <ul style="font-size:0.88rem;color:#2c3e50;line-height:1.8;">
+        <li>Used as a <strong>dynamic marker of acuity over time</strong></li>
+        <li>Applied a <strong>minimum of 2 times</strong> per patient (Arrival + Departure)</li>
+        <li>Can change as patient condition changes or responds to treatment</li>
+        <li>Used to determine <strong>transport destination</strong></li>
+        <li>Departure CTAS is reported to the receiving hospital</li>
+        <li>Accuracy: <strong>85% within one level</strong> — two paramedics will not always match 100%</li>
+      </ul>
+    </div>
+    <div style="background:rgba(41,128,185,0.08);border:2px solid rgba(41,128,185,0.35);border-radius:14px;padding:20px 22px;">
+      <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;color:#1a5276;margin-bottom:12px;">&#127973; Emergency Department CTAS</div>
+      <ul style="font-size:0.88rem;color:#2c3e50;line-height:1.8;">
+        <li>Used as a <strong>triage tool at a specific point in time</strong></li>
+        <li>Assigned <strong>once</strong> on initial contact by a triage nurse — not changed</li>
+        <li>Does not reflect treatment response</li>
+        <li>Used to <strong>prioritize waiting room patients</strong></li>
+        <li>The ED CTAS may differ from the Prehospital CTAS — this is expected and normal</li>
+        <li>Differences occur due to: modified presenting complaints, short transport times, treatment response rules</li>
+      </ul>
+    </div>
+  </div>
+  <div class="reveal" style="background:rgba(39,174,96,0.1);border-left:4px solid #27ae60;border-radius:8px;padding:14px 18px;font-size:0.88rem;color:#1a4d2e;line-height:1.7;max-width:860px;">
+    <strong>Key Point:</strong> The Prehospital CTAS and the ED CTAS are not expected to always match. Differences are normal and result from the dynamic nature of prehospital care, treatment response, and the 2-level downgrade safety rule.
+  </div>
+
 </section>
 </div>
 
@@ -2555,23 +2431,7 @@ input,select,textarea{user-select:text;-webkit-user-select:text;}
 </div>
 
 <!-- LIVE BUBBLE -->
-<div class="live-ctas" style="display:flex;align-items:center;gap:14px;">
-  <!-- Dynamic Severity Arrow -->
-  <div id="ctasArrow" style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-    <span id="ctasArrowLabel" style="font-family:'Montserrat',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;transition:color 0.4s;">SEVERITY</span>
-    <svg id="ctasArrowSvg" viewBox="0 0 28 80" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:80px;filter:drop-shadow(0 0 6px #aaa);transition:filter 0.4s;">
-      <defs>
-        <linearGradient id="arrowGradDyn" x1="0" y1="1" x2="0" y2="0">
-          <stop id="arrowStop1" offset="0%" stop-color="#aaa"/>
-          <stop id="arrowStop2" offset="100%" stop-color="#aaa"/>
-        </linearGradient>
-      </defs>
-      <!-- Arrow shaft -->
-      <rect x="11" y="22" width="6" height="52" rx="3" fill="url(#arrowGradDyn)"/>
-      <!-- Arrow head -->
-      <polygon points="14,2 2,26 26,26" fill="url(#arrowGradDyn)"/>
-    </svg>
-  </div>
+<div class="live-ctas">
   <div class="ctas-bubble" id="ctasBubble" onclick="scrollToResult()">
     <div>
       <div class="ctas-bubble-text">CURRENT CTAS</div>
@@ -2907,20 +2767,7 @@ function updateDisplay(level,reasons){
   var bubble=document.getElementById('ctasBubble');
   bubble.style.background=BCOLORS[level];
   document.getElementById('bubbleLevel').textContent='CTAS '+level;
-  // Update dynamic arrow color + shake
-  var arrowColors=['','#e74c3c','#e67e22','#d4ac0d','#27ae60','#2980b9'];
-  var arrowGlows=['','rgba(231,76,60,0.8)','rgba(230,126,34,0.8)','rgba(212,172,13,0.8)','rgba(39,174,96,0.8)','rgba(41,128,185,0.8)'];
-  var arrowLabels=['','CRITICAL','EMERGENT','URGENT','LESS URGENT','NON-URGENT'];
-  var col=arrowColors[level]||'#aaa';
-  var glow=arrowGlows[level]||'rgba(170,170,170,0.5)';
-  var stop1=document.getElementById('arrowStop1');
-  var stop2=document.getElementById('arrowStop2');
-  if(stop1&&stop2){stop1.setAttribute('stop-color',col);stop2.setAttribute('stop-color',col);}
-  var svg=document.getElementById('ctasArrowSvg');
-  if(svg){svg.style.filter='drop-shadow(0 0 8px '+glow+') drop-shadow(0 0 16px '+glow+')';}
-  var lbl=document.getElementById('ctasArrowLabel');
-  if(lbl){lbl.textContent=arrowLabels[level]||'SEVERITY';lbl.style.color=col;}
-  if(svg){svg.classList.remove('shaking');void svg.offsetWidth;svg.classList.add('shaking');setTimeout(function(){svg.classList.remove('shaking');},700);}
+
 }
 
 function scrollToResult(){document.getElementById('step8').scrollIntoView({behavior:'smooth',block:'start'});}
@@ -2981,21 +2828,6 @@ document.addEventListener('selectstart',function(e){if(e.target.tagName==='INPUT
 
 calcCTAS();
 
-// Sync CTAS severity arrow height to oval stack
-(function syncArrowHeight(){
-  function doSync(){
-    var stack=document.querySelector('.ctas-levels-stack');
-    var arrow=document.querySelector('.ctas-severity-arrow-outer');
-    if(stack&&arrow){
-      var h=stack.getBoundingClientRect().height;
-      if(h>0){arrow.style.height=h+'px';}
-    }
-  }
-  doSync();
-  window.addEventListener('resize',doSync);
-  setTimeout(doSync,400);
-  setTimeout(doSync,1200);
-})();
 </script>
 
   </div>
@@ -6387,20 +6219,7 @@ function updateDisplay(level,reasons){
   var bubble=document.getElementById('ctasBubble');
   bubble.style.background=BCOLORS[level];
   document.getElementById('bubbleLevel').textContent='CTAS '+level;
-  // Update dynamic arrow color + shake
-  var arrowColors=['','#e74c3c','#e67e22','#d4ac0d','#27ae60','#2980b9'];
-  var arrowGlows=['','rgba(231,76,60,0.8)','rgba(230,126,34,0.8)','rgba(212,172,13,0.8)','rgba(39,174,96,0.8)','rgba(41,128,185,0.8)'];
-  var arrowLabels=['','CRITICAL','EMERGENT','URGENT','LESS URGENT','NON-URGENT'];
-  var col=arrowColors[level]||'#aaa';
-  var glow=arrowGlows[level]||'rgba(170,170,170,0.5)';
-  var stop1=document.getElementById('arrowStop1');
-  var stop2=document.getElementById('arrowStop2');
-  if(stop1&&stop2){stop1.setAttribute('stop-color',col);stop2.setAttribute('stop-color',col);}
-  var svg=document.getElementById('ctasArrowSvg');
-  if(svg){svg.style.filter='drop-shadow(0 0 8px '+glow+') drop-shadow(0 0 16px '+glow+')';}
-  var lbl=document.getElementById('ctasArrowLabel');
-  if(lbl){lbl.textContent=arrowLabels[level]||'SEVERITY';lbl.style.color=col;}
-  if(svg){svg.classList.remove('shaking');void svg.offsetWidth;svg.classList.add('shaking');setTimeout(function(){svg.classList.remove('shaking');},700);}
+
 }
 
 function scrollToResult(){document.getElementById('step8').scrollIntoView({behavior:'smooth',block:'start'});}
