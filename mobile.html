@@ -3336,7 +3336,7 @@ input, select, textarea { font-size: 1rem !important; }
 
 <!-- ACTION BAR -->
 <div class="action-bar">
-  <button class="btn-primary" onclick="calculateCTAS()">&#9654; Calculate CTAS</button>
+  <button class="btn-menu-nav" onclick="toggleNavDrawer()">&#9776; Menu</button>
   <button class="btn-report" onclick="generateReport()">&#128203; Generate Report</button>
   <button class="btn-share" onclick="shareWhatsApp()">&#128172; Share Report</button>
 </div>
@@ -3720,6 +3720,10 @@ document.addEventListener('selectstart',function(e){if(e.target.tagName==='INPUT
 (function(){var th=160;setInterval(function(){if(window.outerWidth-window.innerWidth>th||window.outerHeight-window.innerHeight>th){document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#1a1a2e;color:#e74c3c;font-family:Montserrat,sans-serif;font-size:2rem;font-weight:900;text-align:center;padding:20px;">ACCESS DENIED<br/><span style="font-size:1rem;color:rgba(255,255,255,0.5);display:block;margin-top:12px;">© Metwalley Amin Helwa</span></div>';}},1000);})();
 
 calcCTAS();
+function toggleNavDrawer() {
+  var drawer = document.getElementById('navDrawer');
+  if (drawer) { drawer.classList.toggle('open'); }
+}
 </script>
 
   </div>
